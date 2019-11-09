@@ -13,7 +13,7 @@ export const loadSubmissionsList = () => {
       const response = await firebase
         .app()
         .functions('asia-east2')
-        .httpsCallable('getRecentSubmissions')({})
+        .httpsCallable('legacyGetRecentSubmissions')({})
       dispatch(receiveSubmissions(response.data))
     } catch (error) {
       console.log(error)

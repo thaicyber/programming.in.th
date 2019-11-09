@@ -34,7 +34,7 @@ export const loadTasksList = (
       const response = await firebase
         .app()
         .functions('asia-east2')
-        .httpsCallable('getTasksWithFilter')(params)
+        .httpsCallable('legacyGetTasksWithFilter')(params)
       response.data.sort((a: any, b: any) => {
         return a.problem_id.localeCompare(b.problem_id)
       })
@@ -73,7 +73,7 @@ export const loadTask = (id: string) => {
       const response = await firebase
         .app()
         .functions('asia-east2')
-        .httpsCallable('getProblemMetadata')(params)
+        .httpsCallable('legacyGetProblemMetadata')(params)
       dispatch(receiveTask(response.data))
     } catch (error) {
       console.log(error)

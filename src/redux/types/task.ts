@@ -8,7 +8,6 @@ export interface ITaskState {
 
 export interface ITask {
   readonly problem_id: string
-  readonly author: string
   readonly path: string
   readonly url: string
   readonly title: string
@@ -17,6 +16,9 @@ export interface ITask {
   readonly difficulty: number
   readonly tags: ReadonlyArray<string>
   readonly source: string
+  readonly solve_count: number
+  readonly submit: boolean
+  readonly visible: boolean
 }
 
 export interface ITaskPage {
