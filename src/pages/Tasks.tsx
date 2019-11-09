@@ -55,7 +55,6 @@ class TasksListComponent extends React.Component<
     if (this.props.taskList.length > 1 && !this.state.firstLoad) {
       this.setState({ taskList: this.props.taskList, firstLoad: true })
       let tagNow: string[] = []
-      console.log(this.props.taskList)
       this.props.taskList.forEach(val => {
         val.tags.forEach(tag => {
           tagNow.push(tag)
