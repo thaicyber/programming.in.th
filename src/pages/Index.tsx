@@ -120,10 +120,10 @@ export const _Index: React.FunctionComponent = () => {
             <Title color="#5D5CFF"> data structures </Title>{' '}
             <Title>and their relationships" — Linus Torvalds</Title>
             <SubTitle>
-              Programming.in.th provides you with the fundamentals of
-              algorithmic problem-solving, an important skill to differentiate
-              yourself as a programmer in an increasingly technologically
-              advanced world.
+              ยินดีต้อนรับเข้าสู่ programming.in.th!
+              เรามีโจทย์ตั้งแต่ระดับพื้นฐานที่สุดจนถึงระดับค่ายสสวทและผู้แทนประเทศ
+              นอกจากนี้ยังมีบทความอีกมากมายที่คุณสามารถใช้เรียนรู้อัลกอริทึมและโครงสร้างข้อมูลต่าง
+              ๆ ได้ ซึ่งมีความจำเป็นอย่างในการทำงานเป็นนักเขียนโปรแกรมระดับสูง
             </SubTitle>
           </div>
           <DesktopOnly>
