@@ -25,7 +25,11 @@ const OptionsWrapper = styled.div`
 
 const { Option } = Select
 
-const languageData = [['text/x-csrc', 'C / C++'], ['python', 'Python']]
+const languageData = [
+  ['text/x-csrc', 'C / C++'],
+  ['python', 'Python'],
+  ['text/x-java', 'Java']
+]
 
 type TPlot = {
   [key: string]: string
@@ -33,7 +37,8 @@ type TPlot = {
 
 const mapLanguage: TPlot = {
   'text/x-csrc': 'cpp',
-  python: 'python'
+  python: 'python',
+  'text/x-java': 'java'
 }
 
 const themeData = [
@@ -74,7 +79,7 @@ class SubmitComponent extends React.Component<ISubmitProps, ISubmitState> {
     theme: 'material',
     code: '',
     uploadedCode: '',
-    hideCode: true
+    hideCode: false
   }
 
   componentDidMount() {
@@ -134,7 +139,7 @@ class SubmitComponent extends React.Component<ISubmitProps, ISubmitState> {
           <Result
             status="success"
             icon={<Icon type="loading" />}
-            title="Submiting"
+            title="Submitting"
           />
         ) : this.props.submissionResponse === 200 ? (
           <Result
@@ -183,14 +188,14 @@ class SubmitComponent extends React.Component<ISubmitProps, ISubmitState> {
                 <Upload getCodeFromUpload={this.getCodeFromUpload}></Upload>
               </SubFilterWrapper>
               <SubFilterWrapper>
-                <p>Hide Code: </p>
+                {/* <p>Hide Code: </p>
                 <Switch
                   style={{ marginLeft: 10 }}
                   checkedChildren={<Icon type="check" />}
                   unCheckedChildren={<Icon type="close" />}
                   defaultChecked={this.state.hideCode}
                   onChange={this.handleHideCode}
-                />
+                /> */}
               </SubFilterWrapper>
             </OptionsWrapper>
             <Row>

@@ -11,7 +11,7 @@ export const Upload: React.FunctionComponent<IUploaderProps> = (
   props: IUploaderProps
 ) => (
   <AntDUpload
-    accept=".c, .cpp, .py"
+    accept=".c, .cpp, .py, .java"
     showUploadList={false}
     beforeUpload={file => {
       const reader = new FileReader()
