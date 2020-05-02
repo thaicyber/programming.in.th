@@ -35,7 +35,7 @@ This section provides a quick start guide for our project.
 
 1. Make sure all the prerequisites are installed.
 1. Fork programming.in.th repository, https://github.com/programming-in-th/programming.in.th.git
-1. Clone your forked repository.
+1. Clone your forked repository. 
 1. Run `yarn` to install needed packages.
 1. Run `yarn dev` to start the application. You can access it via `http://localhost:3000/`.
 
