@@ -5,9 +5,9 @@ import { Spin } from 'antd'
 
 import { Wrapper } from './Common'
 
-const Submit = dynamic(() => import('./Submit').then(mod => mod.Submit), {
+const Submit = dynamic(() => import('./Submit').then((mod) => mod.Submit), {
   loading: () => <Spin />,
-  ssr: false
+  ssr: false,
 })
 
 const StatementComponent = styled.div`
@@ -47,7 +47,7 @@ export const Statement = ({ statementMetadata, statement, user }) => {
         <p> Memory Limit : {statementMetadata?.memory_limit} MB(s)</p>
         {statement === '' ? (
           <Embed
-            src={`https://programming-in-th.github.io/statement/${statementMetadata?.problem_id}.pdf`}
+            src={`https://beta-programming-in-th.s3-ap-southeast-1.amazonaws.com/statements/${statementMetadata?.problem_id}.pdf`}
             type="application/pdf"
             width="100%"
             height="800px"
