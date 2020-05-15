@@ -13,6 +13,7 @@ import {
   reducer,
   UserAction,
   UserStateContext,
+  IContext,
 } from 'components/UserContext'
 import { onetap } from 'components/auth/onetap'
 
@@ -62,15 +63,27 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
             user,
           },
         })
-
-        mutate('getUserContext')
       }
     })
 
-    return () => {
-      unsubscribe()
-    }
+    return () => unsubscribe()
   }, [])
+
+  useEffect(() => {
+    if (userState.user) {
+      const unsubscribe = firebase
+        .firestore()
+        .collection('users')
+        .doc(userState.user.uid)
+        .onSnapshot((doc) => {
+          const data = doc.data() as IContext
+          if (data) userDispatch({ type: 'RECEIVE_CONTEXT', payload: data })
+        })
+      return () => unsubscribe()
+    } else {
+      userDispatch({ type: 'RECEIVE_CONTEXT', payload: initialState })
+    }
+  }, [userState.user])
 
   useEffect(() => {
     if (userContext) {
